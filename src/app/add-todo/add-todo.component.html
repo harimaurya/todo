@@ -1,0 +1,59 @@
+<div class="todo-page">
+    <div class="content-box">
+        <h1 class="todo-page__title">To-do App!</h1>
+        <div class="todo-form">
+            <h3 class="todo-form__title">Add new To-Do</h3>
+            <form #todoForm="ngForm">
+                <div class="form-row">
+                    <div class="form-group col-12">
+                        <input type="text" name="todoInput" #todoInput="ngModel" class="form-control" placeholder="Enter new task" [(ngModel)]="todoItem.task" required/>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-12">
+                        <label for="task-type">Task Type:</label>
+                        <div class="btn-group btn-group-toggle task-type-selection" ngbRadioGroup name="task-type" [(ngModel)]="todoItem.type">
+                            <label ngbButtonLabel class="btn-primary">
+                                <input ngbButton type="radio" value="general">
+                                <span class="icon-sticky-note">General</span>
+                            </label>
+                            <label ngbButtonLabel class="btn-primary">
+                                <input ngbButton type="radio" value="home">
+                                <span class="icon-home">Home</span>
+                            </label>
+                            <label ngbButtonLabel class="btn-primary">
+                                <input ngbButton type="radio" value="work">
+                                <span class="icon-suitcase">Work</span>
+                            </label>
+                            <label ngbButtonLabel class="btn-primary">
+                                <input ngbButton type="radio" value="travel"> 
+                                <span class="icon-flight">Travel</span>
+                            </label>
+                            <label ngbButtonLabel class="btn-primary">
+                                <input ngbButton type="radio" value="shopping"> 
+                                <span class="icon-shopping-bag">Shopping</span>
+                            </label>
+                            <label ngbButtonLabel class="btn-primary">
+                                <input ngbButton type="radio" value="medical"> 
+                                <span class="icon-user-md">Medical</span>
+                            </label>
+                            <label ngbButtonLabel class="btn-primary">
+                                <input ngbButton type="radio" value="play"> 
+                                <span class="icon-soccer-ball">Play</span>
+                            </label>
+                            <label ngbButtonLabel class="btn-primary">
+                                <input ngbButton type="radio" value="leisure"> 
+                                <span class="icon-note-beamed">Leisure</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-12">
+                        <button class="btn btn-primary btn-addtodo" (click)="addTodo()" [disabled]="todoInput.invalid">Add</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

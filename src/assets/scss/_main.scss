@@ -1,0 +1,144 @@
+@import './variables';
+
+.site {
+    position: relative;
+    background-color: $primary-color;
+}
+
+
+//Primary Content
+.primary-content{
+    position: relative;
+}
+
+
+//Todo Page
+
+.todo-page {
+    height: auto;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+
+    @include media-breakpoint-up(sm){
+        
+        padding-top: 50px;
+    }
+
+    .todo-page__title {
+        color: $white;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: bold;
+
+        @include media-breakpoint-up(lg){
+            font-size: 3rem;
+        }
+    }
+}
+
+//Todo Form
+.todo-form {
+    text-align: center;
+    margin-top: 30px;
+    max-width: 500px;
+
+    .todo-form__title {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: $white;
+        margin-bottom: 15px;
+
+        @include media-breakpoint-up(lg) {
+            font-size: 1.7rem;
+            margin-bottom: 20px;
+        }
+    }
+
+    input.form-control {
+        &::placeholder {
+            color: $placeholder-color;
+            font-weight: bold;
+          }
+
+          @include media-breakpoint-up(lg){
+              font-size: 1.7rem;
+          }
+    }
+
+    label{
+        color: $white;
+    }
+
+    .btn-addtodo {
+        font-weight: bold;
+        background-color: transparent;
+        border-color: rgba(255, 255, 255, 0.4);
+        font-size: 1.2rem;
+        padding: 10px 20px;
+        width: 100%;
+        max-width: 200px;
+
+        &:hover{
+            background-color: $btn-border-color;
+        }
+
+        &[disabled]:hover{
+            background-color: transparent;
+            cursor: default;
+        }
+
+        @include media-breakpoint-up(lg){
+            font-size: 1.7rem;
+        }
+    }
+}
+
+//Task Selection
+.task-type-selection {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -2px ;
+
+    label.btn {
+        margin: 0 2px  5px;
+        border-radius: 3px;
+        font-size: 12px;
+        flex-basis: 25%;
+        background-color: transparent;
+        border-color: rgba(255,255,255, 0.6);
+        cursor: pointer;
+
+        &:hover{
+            background-color: $btn-border-color;
+        }
+
+        @include media-breakpoint-up(sm){
+            flex-basis: 16%;
+        }
+
+        @include media-breakpoint-up(lg) {
+            flex-basis: 20%;
+        }
+
+    }
+
+    [class^="icon-"]:before{
+        @include media-breakpoint-up(lg){
+            margin-right: 7px;
+        }
+    }
+
+    & > .btn:not(:first-child){
+        margin-left: 2px ;
+        border-radius: 4px;
+    }
+
+    & > .btn:not(:last-child):not(.dropdown-toggle) {
+        border-radius: 4px;
+    }
+    
+}

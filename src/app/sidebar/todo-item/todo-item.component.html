@@ -1,0 +1,11 @@
+<li [ngClass]="todoItem.status ? 'status-on' : 'status-off'" *ngIf="todoItem">
+    <div class="content-wrap">
+        <span class="task">{{ todoItem.task }}</span>
+        <button class="btn icon-trash" (click)="deleteTodo()"></button>
+    </div>
+    <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" [attr.id]="todoItem.key" (change)="updateTodo()" [checked]="!todoItem.status">
+        <label class="custom-control-label" [attr.for]="todoItem.key"></label>
+    </div>
+    <span [ngClass]="todoItem.type ? 'task-icon task-'+ todoItem.type : 'task-icon' "></span>
+</li>

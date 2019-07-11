@@ -1,0 +1,21 @@
+<div class="todo-list">
+    <div class="content-box">
+        <div class="todo-list__block" *ngIf="todoList?.length > 0">
+            <div class="todo-list__block-header">
+                <span class="icon-calendar-inv">{{ todayDate | date : longDate }}</span>
+                <span class="badge badge-info">{{ getProgress() +'%'}}</span>
+            </div>
+            <div class="todo-list__block-list">
+                <ul>
+                    <app-todo-item *ngFor="let todoItem of todoList" [todo]="todoItem"></app-todo-item>
+                </ul>                
+            </div>
+        </div>
+        <div class="no-task" *ngIf="!loader && todoList?.length == 0">
+            <span class="ico icon-emo-thumbsup"></span>
+            <span class="msg">No task To-Do! Good Job!!!</span>
+            <span class="serious-msg">Start your day by adding task To-Do</span>
+        </div>
+        <app-loader [show]="loader"></app-loader>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+@import './variables';
+
+//Toggle Button
+.btn-toggle {
+    position: fixed;
+    z-index: 101;
+    font-size: 1.5rem;
+    outline: none;
+    box-shadow: none;
+
+    &:focus{
+        box-shadow: none;
+    }
+}
+
+//Thought
+.thought {
+    padding: 10px;
+    font-weight: 500;
+    color: #666;
+
+    em {
+        display: block;
+        text-align: right;
+        margin-right: 10%;
+        font-weight: normal;
+    }
+}
+
+//Date
+.date {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin-bottom: 5px;
+
+    span{
+        display: block;
+        line-height: 1;
+        margin-bottom: 3px;
+
+        &:last-child{
+            margin-bottom: 0px;
+        }
+
+        &.date-day {
+            font-size: 2rem;
+            letter-spacing: 2px;
+        }
+
+        &.date-year {
+            font-size: 1.5rem;
+        }
+    }
+}

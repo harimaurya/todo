@@ -1,0 +1,19 @@
+<div class="sidebar-header">
+    <app-todo-header></app-todo-header>
+</div>
+<div class="sidebar-list">
+    <ngb-tabset>
+        <ngb-tab>
+            <ng-template ngbTabTitle><span class="icon-flag">Today</span></ng-template>
+            <ng-template ngbTabContent>
+                <app-today></app-today>
+            </ng-template>
+        </ngb-tab>
+        <ngb-tab>
+            <ng-template ngbTabTitle><span class="icon-back-in-time">History</span></ng-template>
+            <ng-template ngbTabContent>
+                <app-history></app-history>
+            </ng-template>
+        </ngb-tab>
+    </ngb-tabset>
+</div>
